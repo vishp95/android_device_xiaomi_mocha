@@ -117,6 +117,8 @@ OVERRIDE_RS_DRIVER := libnvRSDriver.so
 BOARD_SEPOLICY_DIRS += device/xiaomi/mocha/sepolicy/common \
                        device/xiaomi/mocha/sepolicy/lineage-common \
                        device/xiaomi/mocha/sepolicy/mocha
+
+SELINUX_IGNORE_NEVERALLOWS := true
                        
 # ThermalHAL
 TARGET_THERMALHAL_VARIANT := tegra
