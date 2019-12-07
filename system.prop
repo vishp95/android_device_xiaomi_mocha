@@ -25,3 +25,4 @@ persist.tegra.didim.video = 5
 persist.tegra.didim.normal = 3
 persist.sys.usb.config=mtp
 persist.sys.isUsbOtgEnabled=1
+ro.lineage.build.vendor_security_patch=2018-01-01
