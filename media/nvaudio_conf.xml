@@ -48,7 +48,7 @@
 
 <AudioConfigs>
   <alsa_device name="music"
-               card_id="-1"
+               card_id="1"
                card_name="tegrart5671"
                device_id="0">
     <pcm_config rate="48000"
@@ -88,15 +88,6 @@
       <ctl name="Right Spk Coil Value" val="1uH"/>
       <ctl name="Left Spk Inductance" val="39uH"/>
       <ctl name="Right Spk Inductance" val="39uH"/>
-
-      <ctl name="Left Spk Boot Patch" val="tfa9890_boot.patch"/>
-      <ctl name="Right Spk Boot Patch" val="tfa9890_boot.patch"/>
-      <ctl name="Left Spk ROM Patch" val="tfa9890_rom.patch"/>
-      <ctl name="Right Spk ROM Patch" val="tfa9890_rom.patch"/>
-      <ctl name="Left Spk Speaker File" val="tfa9890_left.speaker"/>
-      <ctl name="Right Spk Speaker File" val="tfa9890_right.speaker"/>
-      <ctl name="Left Spk Config File" val="tfa9890.config"/>
-      <ctl name="Right Spk Config File" val="tfa9890.config"/>
     </path>
 
     <playback>
@@ -128,40 +119,20 @@
           <ctl name="IF2 ADC Mux" val="IF_ADC2"/>
 
           <ctl name="Left Spk Output Voltage" val="8.5V"/>
-          <ctl name="Left Spk Output Voltage" val="9.5V" tag="speaker-raw"/>
-          <ctl name="Left Spk Output Voltage" val="9.5V" tag="speakerleft-raw"/>
-          <ctl name="Left Spk Output Voltage" val="9.5V" tag="speakerright-raw"/>
           <ctl name="Right Spk Output Voltage" val="8.5V"/>
-          <ctl name="Right Spk Output Voltage" val="9.5V" tag="speaker-raw"/>
-          <ctl name="Right Spk Output Voltage" val="9.5V" tag="speakerleft-raw"/>
-          <ctl name="Right Spk Output Voltage" val="9.5V" tag="speakerright-raw"/>
 
           <ctl name="Left Spk Max Coil Current" val="1.9A"/>
-          <ctl name="Left Spk Max Coil Current" val="3.8A" tag="speaker-raw"/>
-          <ctl name="Left Spk Max Coil Current" val="3.8A" tag="speakerleft-raw"/>
-          <ctl name="Left Spk Max Coil Current" val="3.8A" tag="speakerright-raw"/>
           <ctl name="Right Spk Max Coil Current" val="1.9A"/>
-          <ctl name="Right Spk Max Coil Current" val="3.8A" tag="speaker-raw"/>
-          <ctl name="Right Spk Max Coil Current" val="3.8A" tag="speakerleft-raw"/>
-          <ctl name="Right Spk Max Coil Current" val="3.8A" tag="speakerright-raw"/>
 
           <ctl name="Left Spk Resistance" val="Auto"/>
-          <ctl name="Left Spk Resistance" val="8Omh" tag="speaker-raw"/>
-          <ctl name="Left Spk Resistance" val="8Omh" tag="speakerleft-raw"/>
           <ctl name="Right Spk Resistance" val="Auto"/>
-          <ctl name="Right Spk Resistance" val="8Omh" tag="speaker-raw"/>
-          <ctl name="Right Spk Resistance" val="8Omh" tag="speakerright-raw"/>
 
           <ctl name="Left Spk Input Interface Mux" val="Input1"/>
           <ctl name="Right Spk Input Interface Mux" val="Input1"/>
           <ctl name="Left Spk Input Channel Mux" val="Left"/>
           <ctl name="Right Spk Input Channel Mux" val="Right"/>
           <ctl name="Left Spk Amplifier Channel Mux" val="DSP"/>
-          <ctl name="Left Spk Amplifier Channel Mux" val="Left" tag="speaker-raw"/>
-          <ctl name="Left Spk Amplifier Channel Mux" val="Left" tag="speakerleft-raw"/>
           <ctl name="Right Spk Amplifier Channel Mux" val="DSP"/>
-          <ctl name="Right Spk Amplifier Channel Mux" val="Right" tag="speaker-raw"/>
-          <ctl name="Right Spk Amplifier Channel Mux" val="Right" tag="speakerright-raw"/>
           <ctl name="Left Spk Output Channel Mux" val="Gain" val1="AEC"/>
           <ctl name="Right Spk Output Channel Mux" val="Current" val1="Gain"/>
           <ctl name="Left Spk Output Interface Mux" val="DSP"/>
@@ -169,19 +140,8 @@
           <ctl name="Left Spk Gain Channel Mux" val="Right"/>
           <ctl name="Right Spk Gain Channel Mux" val="Left"/>
 
-          <ctl name="Left Spk Preset File" val="tfa9890_left_music.preset" mode="AUDIO_MODE_NORMAL"/>
-          <ctl name="Left Spk Preset File" val="tfa9890_left_voice.preset" mode="AUDIO_MODE_IN_COMMUNICATION"/>
-          <ctl name="Right Spk Preset File" val="tfa9890_right_music.preset" mode="AUDIO_MODE_NORMAL"/>
-          <ctl name="Right Spk Preset File" val="tfa9890_right_voice.preset" mode="AUDIO_MODE_IN_COMMUNICATION"/>
-          <ctl name="Left Spk Equalizer File" val="tfa9890_left_music.eq" mode="AUDIO_MODE_NORMAL"/>
-          <ctl name="Left Spk Equalizer File" val="tfa9890_left_voice.eq" mode="AUDIO_MODE_IN_COMMUNICATION"/>
-          <ctl name="Right Spk Equalizer File" val="tfa9890_right_music.eq" mode="AUDIO_MODE_NORMAL"/>
-          <ctl name="Right Spk Equalizer File" val="tfa9890_right_voice.eq" mode="AUDIO_MODE_IN_COMMUNICATION"/>
-
           <ctl name="Int Left Spk Switch" val="1"/>
-          <ctl name="Int Left Spk Switch" val="0" tag="speakerright-raw"/>
           <ctl name="Int Right Spk Switch" val="1"/>
-          <ctl name="Int Right Spk Switch" val="0" tag="speakerleft-raw"/>
         </path>
         <path name="off">
           <ctl name="Int Left Spk Switch" val="0"/>
@@ -221,8 +181,7 @@
           <ctl name="DSP DL Mux" val="DSP"/>
           <ctl name="DSP ASRC Switch" val="clk_i2s1_track"/>
           <ctl name="DSP Function Switch" val="BtMic ezAEC" mode="AUDIO_MODE_NORMAL"/>
-          <ctl name="DSP Function Switch" val="BtMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION" tag="bt-ns"/>
-          <ctl name="DSP Function Switch" val="BtMic ezAEC" mode="AUDIO_MODE_IN_COMMUNICATION" tag="bt-!ns"/>
+          <ctl name="DSP Function Switch" val="BtMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DAC L2 Mux" val="TxDC DAC"/>
           <ctl name="DA MONOL ASRC Switch" val="clk_i2s1_track"/>
           <ctl name="DAC2 Playback Volume" val="175"/>
@@ -272,20 +231,14 @@
           <ctl name="TxDP Capture Volume" val="47" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="TxDP SRC Switch" val="Normal" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="TxDP SRC Switch" val="Multiplied by 3" mode="AUDIO_MODE_IN_COMMUNICATION"/>
-          <ctl name="DSP Function Switch" val="BuiltinMic 48K-stereo+FFP+NS" mode="AUDIO_MODE_NORMAL" tag="rec-ns2"/>
-          <ctl name="DSP Function Switch" val="BuiltinMic AEC-1mic" mode="AUDIO_MODE_IN_COMMUNICATION" tag="1mic-ns"/>
-          <ctl name="DSP Function Switch" val="BuiltinMic AEC-2mic" mode="AUDIO_MODE_IN_COMMUNICATION" tag="2mic-ns"/>
+          <ctl name="DSP Function Switch" val="BuiltinMic 48K-stereo+FFP+NS" mode="AUDIO_MODE_NORMAL"/>
+          <ctl name="DSP Function Switch" val="BuiltinMic AEC-2mic" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DSP ASRC Switch" val="clk_sysy_div_out" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="DSP ASRC Switch" val="clk_i2s1_track" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DSP UL Mux" val="DSP"/>
-          <ctl name="DSP UL Mux" val="Bypass" mode="AUDIO_MODE_NORMAL" tag="rec-ns1"/>
-          <ctl name="DSP UL Mux" val="Bypass" tag="builtinmic-raw"/>
-          <ctl name="DSP UL Mux" val="Bypass" tag="primic-raw"/>
-          <ctl name="DSP UL Mux" val="Bypass" tag="secmic-raw"/>
           <ctl name="TDM Data Mux" val="Slot 0-1"/>
           <ctl name="DRC Switch" val="Enable"/>
-          <ctl name="DRC Pre Boost" val="14" mode="AUDIO_MODE_NORMAL" tag="rec-ns1"/>
-          <ctl name="DRC Pre Boost" val="11" mode="AUDIO_MODE_NORMAL" tag="rec-ns2"/>
+          <ctl name="DRC Pre Boost" val="14" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="DRC Pre Boost" val="24" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DRC Limiter Th" val="63" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="DRC Limiter Th" val="56" mode="AUDIO_MODE_IN_COMMUNICATION"/>
@@ -297,13 +250,9 @@
           <ctl name="Stereo1 ADC Mux" val="ADC1L ADC2R"/>
           <ctl name="ADC 1_2" val="ADC"/>
           <ctl name="RECMIXL BST2 Switch" val="1"/>
-          <ctl name="RECMIXL BST2 Switch" val="0" tag="secmic-raw"/>
           <ctl name="RECMIXL BST4 Switch" val="0"/>
-          <ctl name="RECMIXL BST4 Switch" val="1" tag="secmic-raw"/>
           <ctl name="RECMIXR BST2 Switch" val="0"/>
-          <ctl name="RECMIXR BST2 Switch" val="1" tag="primic-raw"/>
           <ctl name="RECMIXR BST4 Switch" val="1"/>
-          <ctl name="RECMIXR BST4 Switch" val="0" tag="primic-raw"/>
           <ctl name="Int Mic Switch" val="1"/>
         </path>
         <path name="off">
@@ -318,17 +267,14 @@
           <ctl name="TxDP Capture Volume" val="47" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="TxDP SRC Switch" val="Normal" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="TxDP SRC Switch" val="Multiplied by 3" mode="AUDIO_MODE_IN_COMMUNICATION"/>
-          <ctl name="DSP Function Switch" val="HeadsetMic 48K-stereo+FFP+NS" mode="AUDIO_MODE_NORMAL" tag="rec-ns2"/>
-          <ctl name="DSP Function Switch" val="HeadsetMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION" tag="1mic-ns"/>
-          <ctl name="DSP Function Switch" val="HeadsetMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION" tag="2mic-ns"/>
+          <ctl name="DSP Function Switch" val="HeadsetMic 48K-stereo+FFP+NS" mode="AUDIO_MODE_NORMAL"/>
+          <ctl name="DSP Function Switch" val="HeadsetMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DSP ASRC Switch" val="clk_sysy_div_out" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="DSP ASRC Switch" val="clk_i2s1_track" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DSP UL Mux" val="DSP"/>
-          <ctl name="DSP UL Mux" val="Bypass" mode="AUDIO_MODE_NORMAL" tag="rec-ns1"/>
           <ctl name="TDM Data Mux" val="Slot 0-1"/>
           <ctl name="DRC Switch" val="Enable"/>
-          <ctl name="DRC Pre Boost" val="14" mode="AUDIO_MODE_NORMAL" tag="rec-ns1"/>
-          <ctl name="DRC Pre Boost" val="11" mode="AUDIO_MODE_NORMAL" tag="rec-ns2"/>
+          <ctl name="DRC Pre Boost" val="14" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="DRC Pre Boost" val="16" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DRC Limiter Th" val="63" mode="AUDIO_MODE_NORMAL"/>
           <ctl name="DRC Limiter Th" val="56" mode="AUDIO_MODE_IN_COMMUNICATION"/>
@@ -354,8 +300,7 @@
           <ctl name="TxDP Capture Volume" val="47"/>
           <ctl name="TxDP SRC Switch" val="Multiplied by 3"/>
           <ctl name="DSP Function Switch" val="BtMic ezAEC" mode="AUDIO_MODE_NORMAL"/>
-          <ctl name="DSP Function Switch" val="BtMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION" tag="bt-ns"/>
-          <ctl name="DSP Function Switch" val="BtMic ezAEC" mode="AUDIO_MODE_IN_COMMUNICATION" tag="bt-!ns"/>
+          <ctl name="DSP Function Switch" val="BtMic AEC" mode="AUDIO_MODE_IN_COMMUNICATION"/>
           <ctl name="DSP ASRC Switch" val="clk_i2s1_track"/>
           <ctl name="DSP UL Mux" val="DSP"/>
           <ctl name="TDM Data Mux" val="Slot 0-1"/>
@@ -404,7 +349,7 @@
   </alsa_device>
 
   <alsa_device name ="aux"
-             card_id="-1"
+             card_id="0"
              card_name="Tegra"
              device_id="3">
     <pcm_config rate="48000"

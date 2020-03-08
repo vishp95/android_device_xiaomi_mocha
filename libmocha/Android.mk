@@ -21,7 +21,36 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
 LOCAL_C_INCLUDES := system/core/init \
                     system/core/base/include
-LOCAL_SRC_FILES := mocha_init.cpp
+LOCAL_SRC_FILES := init.cpp
 LOCAL_MODULE := mocha_init
 
 include $(BUILD_STATIC_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := audio_symbols.c
+LOCAL_SHARED_LIBRARIES := libicuuc libicui18n libcutils
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE := libmocha_audio
+LOCAL_C_INCLUDES := \
+    external/icu/icu4c/source/common
+
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
+
+# Audio HAL
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := audio_wrapper.c
+
+LOCAL_C_INCLUDES += \
+    external/tinyalsa/include \
+    system/media/audio_utils/include \
+    system/media/audio_effects/include
+
+LOCAL_SHARED_LIBRARIES := liblog libcutils libaudioutils libdl libtinyalsa
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
