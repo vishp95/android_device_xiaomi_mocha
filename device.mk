@@ -44,8 +44,8 @@ PRODUCT_PACKAGES += \
 
 # aptXHD
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/aptXHD/libaptX_encoder.so:$(TARGET_COPY_OUT_VENDOR)/libaptX_encoder.so \
-    $(LOCAL_PATH)/aptXHD/libaptXHD_encoder.so:$(TARGET_COPY_OUT_VENDOR)/libaptXHD_encoder.so
+    $(LOCAL_PATH)/aptXHD/libaptX_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaptX_encoder.so \
+    $(LOCAL_PATH)/aptXHD/libaptXHD_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib/libaptXHD_encoder.so
 
 # Bluetooth
 PRODUCT_COPY_FILES += \
