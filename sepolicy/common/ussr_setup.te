@@ -13,21 +13,23 @@
 # limitations under the License.
 
 #
-# nvphsd_setup.sh - power management service setup
+# ussr_setup.sh - power management service setup
 #
-type nvphsd_setup, domain;
-type nvphsd_setup_exec, exec_type, file_type;
+type ussr_setup, domain;
+type ussr_setup_exec, exec_type, file_type;
 
-init_daemon_domain(nvphsd_setup)
+init_daemon_domain(ussr_setup)
 
-allow nvphsd_setup self:capability { chown fowner fsetid };
-set_prop(nvphsd_setup, thermal_prop)
+allow ussr_setup self:capability { dac_override chown fowner fsetid };
+set_prop(ussr_setup, thermal_prop)
+set_prop(ussr_setup, phs_prop)
 
 # file access
-allow nvphsd_setup system_file:file x_file_perms;
-allow nvphsd_setup shell_exec:file rx_file_perms;
-allow nvphsd_setup toolbox_exec:file rx_file_perms;
+allow ussr_setup system_file:file x_file_perms;
+allow ussr_setup shell_exec:file rx_file_perms;
+allow ussr_setup toolbox_exec:file rx_file_perms;
 
 # thermal
-allow nvphsd_setup sysfs_thermal:dir { setattr r_dir_perms };
-allow nvphsd_setup sysfs_thermal:{file lnk_file} { setattr rw_file_perms };
+allow ussr_setup sysfs_thermal:dir { setattr rw_dir_perms };
+allow ussr_setup sysfs_thermal:{file lnk_file} { setattr rw_file_perms };
+

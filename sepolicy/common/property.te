@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2018, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2014-2017, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,10 @@
 # limitations under the License.
 
 # For ro.sf.lcd_density
+type mediacodec_prop, property_type;
 type surfaceflinger_prop, property_type;
 type thermal_prop, property_type;
+type phs_prop, property_type;
 
 # for sys.vrr.min-refr-per-ns
 type vrr_prop, property_type;
@@ -25,11 +27,11 @@ type gpsd_prop, property_type;
 # For pbc
 type pbc_prop, property_type;
 
+# For properties written by set_hwui_params.sh
+type hwui_prop, property_type;
+
 # IKEv2 daemon
 type ctl_charon_prop, property_type;
-
-# IMS ipsec daemon
-type ctl_imsipsec_prop, property_type;
 
 # For locality properties
 type locality_prop, property_type;
@@ -49,8 +51,11 @@ type handshake_sys_vold_prop, property_type;
 # darcy convertible usb port mode
 type usb_mode_prop, property_type;
 
-# AB OTA properties
-type ota_prop, property_type;
+# For audio.frost_routing.priority
+type frost_routing_prop, property_type;
 
-# For flynnd
-type flynnd_prop, property_type;
+# For frost.oqa
+type frost_oqa_prop, property_type;
+
+# For properties related to gamestreaming
+type gamestreaming_prop, property_type;

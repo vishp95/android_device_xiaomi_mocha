@@ -1,4 +1,4 @@
-# Copyright (c) 2017-2018, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,15 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-######################################
-# Attribute declarations
-#
+# /sys/devices/platform/7000c000.i2c/i2c-0/0-002c
+type sysfs_pwm_backlight, fs_type, sysfs_type;
 
-# HAL Shieldtech
-attribute hal_shieldtech;
-attribute hal_shieldtech_client;
-attribute hal_shieldtech_server;
-
-attribute hal_flynn;
-attribute hal_flynn_client;
-attribute hal_flynn_server;
+# /data/gps
+type gps_data_file, file_type, data_file_type, core_data_file_type;
+type gps_socket, file_type;

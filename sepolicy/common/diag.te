@@ -24,5 +24,6 @@ permissive diag;
 allow diag fuse:dir { write search add_name };
 allow diag fuse:file { write read open create };
 allow diag system_file:file { execute_no_trans };
+allow diag self:capability { dac_override };
 
 ')

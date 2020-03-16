@@ -1,4 +1,4 @@
-# Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2014-2016, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# allow default hal to access wifi vendor firmware file
-allow hal_wifi_default vendor_firmware_wifi_file:file r_file_perms;
+type set_hwui, domain;
+type set_hwui_exec, exec_type, file_type;
 
-#Allow access to file /mnt/factory/wifi/wifi_mac.txt
-r_dir_file(hal_wifi_default, factory_file)
+init_daemon_domain(set_hwui)
+set_prop(set_hwui, hwui_prop)
 
-r_dir_file(hal_wifi_default, wifi_data_file)
+allow set_hwui shell_exec:file rx_file_perms;
+allow set_hwui toolbox_exec:file rx_file_perms;
+allow set_hwui system_file:file execute_no_trans;
+
+allow set_hwui proc_meminfo:file r_file_perms;
+
+# Allow access for sys/class/graphics/fb0/modes
+allow set_hwui sysfs_graphics:file r_file_perms;

@@ -1,4 +1,4 @@
-# Copyright (c) 2016 NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2014-2015, NVIDIA CORPORATION.  All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,5 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-allow install_recovery mtd_device:dir r_dir_perms;
-allow install_recovery mtd_device:chr_file rw_file_perms;
+# Allow wpa_supplicant to access symlinks created by wifi_loader
+allow hal_wifi_supplicant wifi_data_file:lnk_file { getattr read write };
+
+r_dir_file(hal_wifi_supplicant, factory_file)
+
+# Access to mmc_host
+r_dir_file(hal_wifi_supplicant, sysfs_mmc_host)
+
+# Access to sysfs_netcfg
+r_dir_file(hal_wifi_supplicant, sysfs_netcfg)
