@@ -26,3 +26,14 @@ persist.tegra.didim.normal = 3
 persist.sys.usb.config=mtp
 persist.sys.isUsbOtgEnabled=1
 ro.lineage.build.vendor_security_patch=2018-01-01
+# debug.hwui.renderer=skiavk
+
+# LMKD options
+# ro.lmk.low=1001
+# ro.lmk.medium=800 
+# ro.lmk.critical=0
+# ro.lmk.critical_upgrade=false
+# ro.lmk.upgrade_pressure=100
+# ro.lmk.downgrade_pressure=100
+# ro.lmk.kill_heaviest_task=true
+# ro.lmk.kill_timeout_ms=100
