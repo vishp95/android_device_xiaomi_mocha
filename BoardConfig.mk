@@ -29,6 +29,7 @@ TARGET_CPU_VARIANT := cortex-a15
 # Audio
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
+TARGET_EXCLUDES_AUDIOFX := true
 TARGET_LD_SHIM_LIBS := /system/vendor/lib/hw/audio.primary.vendor.tegra.so|libmocha_audio.so
 
 # Binder API
