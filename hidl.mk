@@ -1,12 +1,15 @@
 # Audio
 PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-service \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio.effect@2.0-service
 
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbt-vendor \
-    android.hardware.bluetooth@1.0-impl
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
 
 # DRM HAL
 PRODUCT_PACKAGES += \
@@ -35,11 +38,13 @@ PRODUCT_PACKAGES += \
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.mocha
+    android.hardware.power@1.0-service.mocha \
+    vendor.lineage.power@1.0
 
 # Renderscript
 PRODUCT_PACKAGES += \
@@ -47,11 +52,17 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service
+
+# Trust
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
 
 # USB HAL
 PRODUCT_PACKAGES += \
