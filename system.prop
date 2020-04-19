@@ -26,6 +26,7 @@ persist.tegra.didim.normal = 3
 persist.sys.usb.config=mtp
 persist.sys.isUsbOtgEnabled=1
 ro.lineage.build.vendor_security_patch=2018-01-01
+debug.sf.disable_hwc=1
 # debug.hwui.renderer=skiavk
 
 # LMKD options
