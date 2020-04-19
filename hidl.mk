@@ -22,10 +22,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl
 
-# Health HAL
+# Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-service
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -35,6 +35,11 @@ PRODUCT_PACKAGES += \
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.mocha
+
+# Media
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-impl \
+    android.hardware.media.omx@1.0-service
 
 # Memtrack
 PRODUCT_PACKAGES += \
